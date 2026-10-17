@@ -17,8 +17,13 @@
             <a href="#felsefe">Felsefemiz</a>
             <a href="#iletisim">İletişim</a>
         </nav>
-        <div class="cart-icon">
-            🛒 <span id="cart-count">0</span>
+        <div class="user-actions">
+            <button class="icon-btn" onclick="openLoginModal()" title="Hesabım / Giriş Yap">
+                👤 <span class="action-text">Giriş Yap</span>
+            </button>
+            <div class="cart-icon" onclick="openCartModal()">
+                🛒 <span id="cart-count">0</span>
+            </div>
         </div>
     </header>
 
@@ -60,7 +65,7 @@
                     <h4>Tasarım Deri Ceket</h4>
                     <p class="slogan-tag">"Detaylar Her Şeyi Değiştirir"</p>
                     <span class="price">4.250 TL</span>
-                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Tasarım Deri Ceket')">Sepete Ekle</button>
                 </div>
             </div>
 
@@ -71,7 +76,7 @@
                     <h4>İmza Tasarım Pantolon</h4>
                     <p class="slogan-tag">"Özgün Kesimler, Zamansız Şıklık"</p>
                     <span class="price">2.890 TL</span>
-                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('İmza Tasarım Pantolon')">Sepete Ekle</button>
                 </div>
             </div>
 
@@ -82,7 +87,7 @@
                     <h4>Şık Gece Elbisesi</h4>
                     <p class="slogan-tag">"Zarafet Her Zaman Seninle"</p>
                     <span class="price">5.400 TL</span>
-                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Şık Gece Elbisesi')">Sepete Ekle</button>
                 </div>
             </div>
 
@@ -98,12 +103,26 @@
 
     <script>
         let count = 0;
-        function addToCart() {
+        function addToCart(productName) {
             count++;
             document.getElementById('cart-count').innerText = count;
-            alert("Ürün sepete eklendi!");
+            alert(productName + " sepete eklendi!");
+        }
+
+        function openLoginModal() {
+            let email = prompt("MELVIA Üye Girişi / Kayıt\nLütfen e-posta adresinizi girin:");
+            if (email) {
+                alert("Hoş geldiniz! " + email + " adresiyle demo girişi sağlandı.");
+            }
+        }
+
+        function openCartModal() {
+            if (count === 0) {
+                alert("Sepetiniz henüz boş.");
+            } else {
+                alert("Sepetinizde " + count + " adet ürün bulunuyor.");
+            }
         }
     </script>
 </body>
 </html>
-
