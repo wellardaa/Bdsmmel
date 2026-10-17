@@ -3,10 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benim Web Sitem</title>
+    <title>MELVIA | Kendi Kuralların. Kendi Gücün.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Merhaba Dünya!</h1>
-    <p>Telefondan GitHub ile web sitesi yapıyorum.</p>
+
+    <!-- Header / Navigasyon -->
+    <header class="navbar">
+        <div class="logo">MELVIA</div>
+        <nav class="nav-links">
+            <a href="#koleksiyon">Koleksiyon</a>
+            <a href="#felsefe">Felsefemiz</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+        <div class="cart-icon">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Hero / Ana Karşılama Alanı -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MELVIA</h1>
+            <h2>Kendi Kuralların. Kendi Gücün.</h2>
+            <p>Sıradan bir giyim markası değil; kendi kurallarını koyan kadınların imzası.</p>
+            <a href="#koleksiyon" class="btn">Koleksiyonu Keşfet</a>
+        </div>
+    </section>
+
+    <!-- Felsefe / Mottolar -->
+    <section id="felsefe" class="motto-section">
+        <div class="motto-card">
+            <h3>İSYANIN BİR TARZI VAR.</h3>
+            <p>Moda ile özgürlüğü birleştiriyoruz. Kalıpların dışında, kendi içinde.</p>
+        </div>
+        <div class="motto-card">
+            <h3>UYMA. YÖN VER.</h3>
+            <p>İki kısa emir. Güçlü, modern ve iz bırakan bir duruş.</p>
+        </div>
+        <div class="motto-card">
+            <h3>İZİN DEĞİL, ALAN AÇ.</h3>
+            <p>Sadece bir kıyafet değil; bir duruş, bir yaşam tarzı.</p>
+        </div>
+    </section>
+
+    <!-- Ürün Kataloğu / E-Ticaret Alanı -->
+    <section id="koleksiyon" class="products-section">
+        <h2 class="section-title">ÖZEL TASARIMLAR</h2>
+        <div class="product-grid">
+
+            <!-- Ürün 1 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="product-info">
+                    <h4>Tasarım Deri Ceket</h4>
+                    <p class="slogan-tag">"Detaylar Her Şeyi Değiştirir"</p>
+                    <span class="price">4.250 TL</span>
+                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Ürün 2 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="product-info">
+                    <h4>İmza Tasarım Pantolon</h4>
+                    <p class="slogan-tag">"Özgün Kesimler, Zamansız Şıklık"</p>
+                    <span class="price">2.890 TL</span>
+                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                </div>
+            </div>
+
+            <!-- Ürün 3 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="product-info">
+                    <h4>Şık Gece Elbisesi</h4>
+                    <p class="slogan-tag">"Zarafet Her Zaman Seninle"</p>
+                    <span class="price">5.400 TL</span>
+                    <button class="add-to-cart-btn" onclick="addToCart()">Sepete Ekle</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="iletisim">
+        <p class="brand-footer">MELVIA</p>
+        <p>Tarzını yeniden keşfet.</p>
+        <p class="hashtags">#Melvia #KendiKurallarinKendiGucun</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+            alert("Ürün sepete eklendi!");
+        }
+    </script>
 </body>
 </html>
+
